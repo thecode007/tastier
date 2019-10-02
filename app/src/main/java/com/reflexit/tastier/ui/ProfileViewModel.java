@@ -13,6 +13,7 @@ public class ProfileViewModel extends ViewModel {
     public MutableLiveData<String> mobile;
     public MutableLiveData<String> email;
     public MutableLiveData<String> points;
+    public MutableLiveData<String> rank;
 
     public ProfileViewModel() {
         name = new MutableLiveData<>();
@@ -21,6 +22,7 @@ public class ProfileViewModel extends ViewModel {
         mobile = new MutableLiveData<>();
         email = new MutableLiveData<>();
         points = new MutableLiveData<>();
+        rank = new MutableLiveData<>();
     }
 
     public void setPerson(Person person) {
@@ -29,6 +31,7 @@ public class ProfileViewModel extends ViewModel {
         mobile.setValue(person.getMobileNumber());
         lastVisit.setValue(dateDifference(person.getLastVisit()).toString());
         points.setValue(String.valueOf(person.getPoints()));
+        rank.setValue(person.getRank());
         email.setValue(person.getEmail());
     }
 

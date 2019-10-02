@@ -38,6 +38,15 @@
         android:text="@{viewmodel.points}"
         />
 
+    <TextView
+        android:id="@+id/tv_rank"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:gravity="center"
+        android:layout_below="@+id/tv_points"
+        android:text="@{viewmodel.rank}"
+        />
 
     <TextView
         android:id="@+id/tv_last_visit"
@@ -45,7 +54,7 @@
         android:layout_height="wrap_content"
         android:padding="5dp"
         android:gravity="center"
-        android:layout_below="@+id/tv_points"
+        android:layout_below="@+id/tv_rank"
         android:text="@{viewmodel.lastVisit}"
         android:layout_alignParentEnd="true"
         />

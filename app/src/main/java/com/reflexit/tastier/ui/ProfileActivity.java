@@ -1,6 +1,5 @@
 package com.reflexit.tastier.ui;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -9,7 +8,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.widget.Toast;
-
 import com.google.gson.Gson;
 import com.reflexit.tastier.R;
 import com.reflexit.tastier.database.entities.Person;
@@ -50,11 +48,11 @@ public class ProfileActivity extends BaseActivity {
             person.setName(profileViewModel.name.getValue());
             person.setEmail(profileViewModel.email.getValue());
             person.setMobileNumber(profileViewModel.mobile.getValue());
+            person.setRank(profileViewModel.rank.getValue());
             getApplicationContext().repositories.insertTransaction(() -> {
                 getApplicationContext().getDb().personDao().insert(person);
             });
             Toast.makeText(this, "Updated", Toast.LENGTH_SHORT).show();
         });
-
     }
 }
