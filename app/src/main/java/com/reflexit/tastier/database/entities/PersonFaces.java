@@ -8,6 +8,7 @@ public class PersonFaces {
 
     @Embedded
     private Person person;
+
     @Relation(parentColumn = "personId", entityColumn = "ownerID", entity = FaceEntity.class)
     private List<FaceEntity> faces;
 

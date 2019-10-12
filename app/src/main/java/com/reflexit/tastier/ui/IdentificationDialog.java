@@ -46,8 +46,6 @@ public class IdentificationDialog  extends Dialog implements RadioAdapter.OnPict
             personFacesSelectors.add(personFacesSelector);
         }
         rvFaces.setAdapter(new RadioAdapter(getContext(), personFacesSelectors, this));
-
-
     }
 
     @Override

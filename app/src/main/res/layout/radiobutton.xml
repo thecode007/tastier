@@ -9,12 +9,15 @@
     android:padding="5dp"
     android:clickable="true"
     android:focusable="true"
-    android:background="#CB000000">
+    >
+
+
     <ImageView
         android:id="@+id/first"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="fitXY"
+        android:src="#AB000000"
         />
 
     <TextView

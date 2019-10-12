@@ -1,6 +1,9 @@
 package com.reflexit.tastier;
 
 import android.app.Application;
+
+import com.facebook.drawee.backends.pipeline.Fresco;
+import com.facebook.stetho.Stetho;
 import com.reflexit.tastier.database.MakeItTastyDB;
 import com.reflexit.tastier.ui.Repositories;
 import com.reflexit.tastier.utils.FileUtils;
@@ -18,6 +21,7 @@ public class FaceAIApp extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+        Fresco.initialize(this);
         client = new OkHttpClient.Builder()
                 .connectionSpecs(Arrays.asList(ConnectionSpec.MODERN_TLS, ConnectionSpec.COMPATIBLE_TLS))
                 .build();
@@ -25,6 +29,7 @@ public class FaceAIApp extends Application {
         db = MakeItTastyDB.getDatabase(this);
         faceAIApp = this;
         FileUtils.createAppFileStructure();
+        Stetho.initializeWithDefaults(this);
     }
 
 

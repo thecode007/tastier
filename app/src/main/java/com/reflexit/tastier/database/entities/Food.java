@@ -9,12 +9,26 @@ import androidx.room.PrimaryKey;
 public class Food {
 
     @NonNull
-    @PrimaryKey
+    @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "id")
     private int id;
 
     @ColumnInfo(name = "name")
     private String name;
+
+    @ColumnInfo(name = "image")
+    private String image;
+
+    @ColumnInfo(name = "price")
+    private double price;
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
 
     public int getId() {
         return id;
@@ -30,5 +44,13 @@ public class Food {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
     }
 }

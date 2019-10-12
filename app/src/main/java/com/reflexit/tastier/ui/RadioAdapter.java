@@ -22,7 +22,8 @@ public class RadioAdapter  extends RecyclerView.Adapter<RadioAdapter.ViewHolder>
     private List<PersonFacesSelector> personFacesSelectors;
     private OnPictureSelectedListener onPictureSelectedListener;
 
-    public RadioAdapter(Context context, List<PersonFacesSelector> personFaces, OnPictureSelectedListener onPictureSelectedListener) {
+    public RadioAdapter(Context context, List<PersonFacesSelector> personFaces,
+                        OnPictureSelectedListener onPictureSelectedListener) {
         this.mInflater = LayoutInflater.from(context);
         this.personFacesSelectors = personFaces;
         this.onPictureSelectedListener = onPictureSelectedListener;
@@ -43,7 +44,7 @@ public class RadioAdapter  extends RecyclerView.Adapter<RadioAdapter.ViewHolder>
             String imageDirectory = FileUtils.personDirectory + "/" +
                     personFaces.getPerson().getPersonId() + "/"
                     + personFaces.getFaces().get(0).getFaceID() + ".jpg";
-            holder.radioButton.setImageDrawable(Drawable.createFromPath(imageDirectory));
+            holder.radioButton.setBackground(Drawable.createFromPath(imageDirectory));
 
         }
 

@@ -47,7 +47,7 @@ public class MainActivity extends BaseActivity {
         RecyclerView recyclerView = findViewById(R.id.rv_main_menu);
         recyclerView.setLayoutManager(new LinearLayoutManager(this, RecyclerView.VERTICAL, false));
         ArrayList<MainMenuSelector> mainMenuSelectors = new ArrayList<>();
-        mainMenuSelectors.add(new MainMenuSelector(R.drawable.customers, getString(R.string.customer_detection), v -> {
+        mainMenuSelectors.add(new MainMenuSelector(R.drawable.capture, getString(R.string.customer_detection), v -> {
                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                         if (checkSelfPermission(Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED &&
                                 checkSelfPermission(Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED &&
@@ -65,24 +65,14 @@ public class MainActivity extends BaseActivity {
                 })
         );
 
-        mainMenuSelectors.add(new MainMenuSelector(R.drawable.customers, getString(R.string.customer_profile), v -> {
+        mainMenuSelectors.add(new MainMenuSelector(R.drawable.complaints, getString(R.string.customer_profile), v -> {
                    startActivity(new Intent(this, CustomersActivity.class));
                 })
         );
 
 
         mainMenuSelectors.add(new MainMenuSelector(R.drawable.foods, getString(R.string.foods), v -> {
-                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                        if (checkSelfPermission(Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED)
-                        {
-                            requestPermissions(new String[]{Manifest.permission.CAMERA}, MY_CAMERA_PERMISSION_CODE);
-                        }
-                        else
-                        {
-                            Intent cameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-                            startActivityForResult(cameraIntent, MY_CAMERA_PERMISSION_CODE);
-                        }
-                    }
+                    startActivity(new Intent(this, FoodActivity.class));
                 })
         );
 
@@ -255,7 +245,6 @@ public class MainActivity extends BaseActivity {
                             });
                             return;
                         }
-
                         dismissLoader();
                         Toast.makeText(getApplicationContext(), getString(R.string.no_face), Toast.LENGTH_LONG).show();
                         facesArray.removeObservers(MainActivity.this);

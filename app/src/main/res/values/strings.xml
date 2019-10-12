@@ -120,5 +120,9 @@
     <string name="camera_permission">camera permission granted</string>
     <string name="search_for_faces">Analyzing and Searching for Faces in the picture…</string>
     <string name="update">Update</string>
+    <string name="chicago_piizza">Chicago Piizza</string>
+    <string name="add">Add</string>
+    <string name="comment">comment</string>
+    <string name="images_gallery">Images Gallery</string>
 
 </resources>

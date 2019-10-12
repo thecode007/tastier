@@ -3,11 +3,6 @@
     xmlns:replace="http://schemas.android.com/tools"
     package="com.reflexit.tastier">
 
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.CAMERA" />
-
     <application
         android:name=".FaceAIApp"
         android:allowBackup="false"
@@ -15,26 +10,32 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme"
-        >
-        <activity android:name=".ui.ProfileActivity" android:screenOrientation="portrait"
-            android:label="Profile"
-            />
-        <activity android:name=".ui.CustomersActivity"
-            android:screenOrientation="portrait"
-            android:label="Customer List"
-            />
-        <activity android:name=".ui.MainActivity" android:screenOrientation="portrait"
-            android:label="Tastier"
-            >
+        android:theme="@style/AppTheme">
+        <activity android:name=".ui.SplashActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"
-                    />
-
+                <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".ui.FoodActivity" />
+        <activity
+            android:name=".ui.ProfileActivity"
+            android:label="Profile"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.CustomersActivity"
+            android:label="Customer List"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.MainActivity"
+            android:label="Tastier"
+            android:screenOrientation="portrait">
+        </activity>
     </application>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
 </manifest>
-
